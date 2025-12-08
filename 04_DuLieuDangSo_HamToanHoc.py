@@ -115,7 +115,7 @@ print("Giá trị e mũ", exp_value, "là:", math.exp(exp_value)) #Kết quả: 
 angle_deg = 30
 angle_rad = math.radians(angle_deg)
 print("Sin của", angle_deg, "độ là:", math.sin(angle_rad)) #Kết quả: 0.49999999999999994
-print("Cos của", angle_deg, "độ là:", math.cos(angle_rad)) #
+print("Cos của", angle_deg, "độ là:", math.cos(angle_rad)) #Kết quả: 0.8660254037844387
 print("Tan của", angle_deg, "độ là:", math.tan(angle_rad)) #Kết quả: 0.5773502691896257
 
 
