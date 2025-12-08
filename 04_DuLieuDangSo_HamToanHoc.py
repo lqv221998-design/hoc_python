@@ -60,3 +60,4 @@ quotient, remainder = divmod(dividend, divisor)
 print("Thương và số dư của", dividend, "chia cho", divisor, "là:", (quotient, remainder)) #Kếtquả: (5, 2)
 # Hàm round() làm tròn số
 # Trên đây là các hàm cơ bản trong python
+# Bạn có thể tìm hiểu thêm trong tài liệu chính thức của Python để khám phá nhiều hàm toán học hơn.
