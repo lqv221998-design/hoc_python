@@ -33,11 +33,21 @@ str2 = "Python"
 result = str1 + " " + str2
 print(result)  # Kết quả: Hello Python
 
+# Nối chuỗi với số
+age = 25
+print("I am " + str(age) + " years old.")  # Kết quả: I am 25 years old.
+
+# Nối chuỗi bằng nghi thức f-string (Python 3.6+)
+name = "Bob"
+age = 25
+print(f"My name is {name} and I am {age} years old.")  # Kết quả: My name is Bob and I am 25 years old.
+
 # Định dạng chuỗi
 name = "Alice"
 age = 30
 formatted_str = "My name is {} and I am {} years old.".format(name, age)
 print(formatted_str)  # Kết quả: My name is Alice and I am 30 years old.
+
 
 # xử lý chuỗi f-string (Python 3.6+)
 formatted_str_f = f"My name is {name} and I am {age} years old."
@@ -64,5 +74,11 @@ if check_str in sample_str:
     print(f'"{check_str}" tồn tại trong chuỗi.') #Kết quả: "Python" tồn tại trong chuỗi.
 else:
     print(f'"{check_str}" không tồn tại trong chuỗi.')
+
+
+# Lặp qua các ký tự trong chuỗi
+print("Các ký tự trong chuỗi:")
+for char in sample_str:
+    print(char)  #Kết quả: H e l l o ,   P y t h o n ! (mỗi ký tự trên một dòng)
 
 
