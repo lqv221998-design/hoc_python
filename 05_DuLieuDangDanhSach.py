@@ -15,6 +15,11 @@ my_list.append(6)
 print("Danh sách sau khi thêm phần tử:", my_list)  # Kết quả: [1, 2, 3, 4, 5, 6]
 
 
+# Chèn phần tử vào vị trí cụ thể
+my_list.insert(2, 10)  # Chèn số 10 vào vị trí index 2
+print("Danh sách sau khi chèn phần tử 10 vào vị trí 2:", my_list)  # Kết quả: [1, 2, 10, 3, 4, 5, 6]
+
+
 # Xóa phần tử khỏi danh sách
 my_list.remove(3)
 print("Danh sách sau khi xóa phần tử 3:", my_list)  # Kết quả: [1, 2, 4, 5, 6]
