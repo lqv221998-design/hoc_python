@@ -78,3 +78,12 @@ print("Dictionary với giá trị mặc định:", default_dict)  # Kết quả
 removed_value = new_dict.pop("c")  # Loại bỏ khóa 'c' và trả về giá trị của nó
 print("Giá trị bị loại bỏ của khóa 'c':", removed_value)  # Kết quả: 3
 print("Dictionary sau khi loại bỏ khóa 'c':", new_dict)  # Kết quả: {'a': 1, 'b': 20, 'd': 4}
+
+
+
+# Loại bỏ và trả về một cặp khóa-giá trị cuối cùng được thêm vào
+last_item = new_dict.popitem()  # Loại bỏ và trả về cặp khóa-giá trị cuối cùng
+print("Cặp khóa-giá trị bị loại bỏ cuối cùng:", last_item)  # Kết quả: ('d', 4)
+print("Dictionary sau khi popitem:", new_dict)  # Kết quả: {'a': 1, 'b': 20}
+
+
