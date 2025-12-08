@@ -1,7 +1,7 @@
 
 # Xuống dòng trong chuỗi
 print("Hello\nWorld") #Kết quả: Hello
-                      #        World
+                      #         World
 
 # Cách muốn in dấu nháy kép trong chuỗi
 print("He said: \"Hello World\"") #Kết quả: He said: "Hello World"
@@ -57,3 +57,12 @@ print("Ký tự cuối cùng:", last_char)  #Kết quả: !
 vidu = "Hello, Python!"
 substring = vidu[7:13]  #Lấy từ ký tự thứ 7 đến 12
 print("Chuỗi con:", substring)  #Kết quả: Python
+
+# Kiểm tra sự tồn tại của chuỗi con
+check_str = "Python"
+if check_str in sample_str:
+    print(f'"{check_str}" tồn tại trong chuỗi.') #Kết quả: "Python" tồn tại trong chuỗi.
+else:
+    print(f'"{check_str}" không tồn tại trong chuỗi.')
+
+
