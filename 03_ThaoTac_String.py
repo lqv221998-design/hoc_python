@@ -26,3 +26,34 @@ print(my_string.capitalize()) # Kết quả: Hello world (chữ cái đầu vi�
 print(my_string.title())      # Kết quả: Hello World (mỗi từ viết hoa chữ cái đầu)
 print(my_string.center(15))  # Kết quả: '   Hello World   ' (căn giữa trong chuỗi dài 15 ký tự)
 print(my_string.encode())      # Kết quả: b'Hello World' (mã hóa chuỗi thành bytes)
+
+# Nối chuỗi
+str1 = "Hello"
+str2 = "Python"
+result = str1 + " " + str2
+print(result)  # Kết quả: Hello Python
+
+# Định dạng chuỗi
+name = "Alice"
+age = 30
+formatted_str = "My name is {} and I am {} years old.".format(name, age)
+print(formatted_str)  # Kết quả: My name is Alice and I am 30 years old.
+
+# xử lý chuỗi f-string (Python 3.6+)
+formatted_str_f = f"My name is {name} and I am {age} years old."
+print(formatted_str_f)  # Kết quả: My name is Alice and I am 30 years old.
+
+# Kiểu dữ liệu chuỗi trong Python
+sample_str = "Hello, Python!"
+print("Kiểu dữ liệu của sample_str:", type(sample_str)) #Kết quả: <class 'str'>
+
+# Truy cập ký tự trong chuỗi
+first_char = sample_str[0]  #Ký tự đầu tiên
+last_char = sample_str[-1]  #Ký tự cuối cùng
+print("Ký tự đầu tiên:", first_char) #Kết quả: H
+print("Ký tự cuối cùng:", last_char)  #Kết quả: !
+
+# Cắt chuỗi (slicing)
+vidu = "Hello, Python!"
+substring = vidu[7:13]  #Lấy từ ký tự thứ 7 đến 12
+print("Chuỗi con:", substring)  #Kết quả: Python
