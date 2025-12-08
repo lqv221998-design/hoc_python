@@ -178,3 +178,71 @@ list_b = [1, 2, 3]
 zipped_list = list(zip(list_a, list_b))
 print("Danh sách các tuple từ hai danh sách:", zipped_list)     # Kết quả: [('a', 1), ('b', 2), ('c', 3)] 
                                                                 # cách suy luận: ghép từng phần tử tương ứng từ hai danh sách
+
+
+# Ứng dụng nâng cao: Giải nén danh sách các tuple thành hai danh sách riêng biệt
+unzipped_a, unzipped_b = zip(*zipped_list)
+print("Danh sách sau khi giải nén - Danh sách A:", list(unzipped_a))  # Kết quả: ['a', 'b', 'c']
+print("Danh sách sau khi giải nén - Danh sách B:", list(unzipped_b))  # Kết quả: [1, 2, 3]
+
+
+# Ứng dụng nâng cao: Sử dụng hàm map để áp dụng một hàm cho tất cả các phần tử trong danh sách
+def square(x):
+    return x ** 2
+squared_numbers = list(map(square, numbers)) # Tạo danh sách các số bình phương
+print("Danh sách các số bình phương sử dụng hàm map:", squared_numbers)  # Kết quả: [9, 1, 16, 1, 25, 81, 4, 36, 25]
+                                        # Cách suy luận: áp dụng hàm square cho từng phần tử trong danh sách numbers
+
+
+# Ứng dụng nâng cao: Sử dụng hàm reduce để tính tích của tất cả các phần tử trong danh sách
+from functools import reduce   # Nhập hàm reduce từ module functools
+product = reduce(lambda x, y: x * y, numbers) # Tính tích của tất cả các phần tử
+print("Tích của tất cả các phần tử trong danh sách sử dụng hàm reduce:", product)  # Kết quả: 32400
+                                # Cách suy luận: nhân dồn tất cả các phần tử trong danh sách với nhau
+
+
+# Ứng dụng nâng cao: Sử dụng danh sách như một ngăn xếp (stack)
+stack = []
+stack.append(1)
+stack.append(2)
+stack.append(3)
+print("Ngăn xếp sau khi thêm phần tử:", stack)  # Kết quả: [1, 2, 3]
+top_element = stack.pop() # hàm pop() lấy phần tử cuối cùng ra khỏi danh sách
+print("Phần tử được lấy ra từ ngăn xếp:", top_element)  # Kết quả: 3
+print("Ngăn xếp sau khi lấy phần tử:", stack)  # Kết quả: [1, 2]
+
+
+# Ứng dụng nâng cao: Sử dụng danh sách như một hàng đợi (queue)
+from collections import deque   # Nhập deque từ module collections
+queue = deque()
+queue.append(1)
+queue.append(2)
+queue.append(3)
+print("Hàng đợi sau khi thêm phần tử:", list(queue))  # Kết quả: [1, 2, 3]
+first_in = queue.popleft() # hàm popleft() lấy phần tử đầu tiên ra khỏi danh sách
+print("Phần tử được lấy ra từ hàng đợi:", first_in)  # Kết quả: 1
+print("Hàng đợi sau khi lấy phần tử:", list(queue))  # Kết quả: [2, 3] 
+# Cách suy luận: thêm phần tử vào cuối danh sách và lấy phần tử từ đầu danh sách
+
+
+# Ứng dụng nâng cao: Tạo danh sách các tuple từ hai danh sách với độ dài khác nhau
+list_a = ['a','c' ,'d', 'b']
+list_b = [1, 2, ]
+zipped_list = list(zip(list_a, list_b))
+print("Danh sách các tuple từ hai danh sách:", zipped_list)  # Kết quả: [('a', 1), ('c', 2)]
+                        # Cách suy luận: hàm zip sẽ dừng lại khi danh sách ngắn hơn hết phần tử
+
+
+# Ứng dụng nâng cao: Giải nén danh sách các tuple thành hai danh sách riêng biệt với độ dài khác nhau
+unzipped_a, unzipped_b = zip(*zipped_list)
+print("Danh sách sau khi giải nén - Danh sách A:", list(unzipped_a))  # Kết quả: ['a', 'c']
+print("Danh sách sau khi giải nén - Danh sách B:", list(unzipped_b))  # Kết quả: [1, 2]
+                    # Cách suy luận: hàm zip sẽ dừng lại khi danh sách ngắn hơn hết phần tử
+
+
+# Ứng dụng nâng cao: Sử dụng hàm map để áp dụng một hàm cho tất cả các phần tử trong danh sách với hàm lambda
+squared_numbers = list(map(lambda x: x ** 2, numbers)) # Tạo danh sách các số bình phương
+print("Danh sách các số bình phương sử dụng hàm map với lambda:", squared_numbers)  # Kết quả: [9, 1, 16, 1, 25, 81, 4, 36, 25]
+                                        # Cách suy luận: áp dụng hàm lambda cho từng phần tử trong danh sách numbers
+
+
