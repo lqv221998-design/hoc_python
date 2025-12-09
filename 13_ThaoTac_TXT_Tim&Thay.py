@@ -5,3 +5,4 @@ with open(danh_sach, "r", encoding="utf-8") as f:
     content = f.read()
     print(content)
 
+
