@@ -13,18 +13,3 @@ with open(ten_file, "r", encoding="utf-8") as f:
     content = f.read()
     print(content)
 
-# 2. Sử dụng phương thức .replace() để tìm và thay thế
-noi_dung_can_tim = "ĐÃ ĐƯỢC CẬP NHẬT"
-noi_dung_thay_the = "Thông tin mới"
-content_moi = content.replace(noi_dung_can_tim, noi_dung_thay_the)
-
-# 3. Mở file ở chế độ 'w' để ghi đè nội dung mới
-with open(ten_file, "w", encoding="utf-8") as f:
-    f.write(content_moi)
-
-print(f"\nĐã thay thế và lưu file thành công.")
-
-# 4. Đọc lại file để kiểm tra kết quả
-print("\n--- Nội dung file SAU khi thay thế ---")
-with open(ten_file, "r", encoding="utf-8") as f:
-    print(f.read())
