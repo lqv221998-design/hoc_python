@@ -1,3 +1,4 @@
+
 # 1. NHẬP THƯ VIỆN CẦN THIẾT
 import numpy as np               # Thư viện toán học để tạo mảng/vector
 import matplotlib.pyplot as plt  # Thư viện vẽ đồ thị
@@ -24,6 +25,7 @@ ax.text(*v, r"$\vec{v}$", fontsize=16, va="bottom", ha="left")
 ax.arrow(0, 0, *v_R, color="r", length_includes_head=True, head_width=0.1)
 ax.text(*v_R, r"$\vec{v_R}$", color="r", fontsize=16, va="bottom", ha="right")
 
+
 # 5. CẤU HÌNH TRỤC TỌA ĐỘ (SPINES) - Phần tạo nên trục Tung/Hoành
 # Dời trục trái (Left - Trục tung) về vị trí 0 (giữa hình)
 ax.spines['left'].set_position('zero')
@@ -33,6 +35,7 @@ ax.spines['bottom'].set_position('zero')
 # Ẩn trục phải (Right) và trục trên (Top) đi cho giống hệ trục toán học
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
+
 
 # 6. TÙY CHỈNH GIỚI HẠN VÀ VẠCH CHIA
 # Cài đặt giới hạn trục x (từ -3 đến 2) và trục y (từ -1 đến 3) để vector nằm gọn trong hình
@@ -44,3 +47,6 @@ ax.grid(True, linestyle=':', alpha=0.6)
 
 # 7. HIỂN THỊ ĐỒ THỊ
 plt.show()
+
+
+
