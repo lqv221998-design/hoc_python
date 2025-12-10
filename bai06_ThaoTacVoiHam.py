@@ -3,12 +3,14 @@
 # Hàm đơn giản để chào hỏi
 def greet(name):   # Hàm chào hỏi
     return f"Hello, {name}!"   # Trả về chuỗi chào hỏi
-print(greet("Alice"))   # Gọi hàm và in kết quả: Hello, Alice!
+if __name__ == "__main__":
+    print(greet("Alice"))   # Gọi hàm và in kết quả: Hello, Alice!
 
 # Hàm tính tổng hai số
 def add(a, b):  # Hàm cộng hai số add là tên hàm, a và b là các tham số
     return a + b  # Trả về tổng của a và b
-print("Tổng của 3 và 5 là:", add(3, 5))  # Gọi hàm và in kết quả: 8
+if __name__ == "__main__":
+    print("Tổng của 3 và 5 là:", add(3, 5))  # Gọi hàm và in kết quả: 8
 
 
 # Hàm kiểm tra số chẵn lẻ
@@ -121,4 +123,21 @@ print("Giá trị lớn nhất trong danh sách:", find_max(numbers))  # Tìm v�
 print("Danh sách sau khi sắp xếp:", sort_list(numbers))  # Sắp xếp và in danh sách
 print("Trung bình cộng của danh sách:", average(numbers))  # Tính và in trung bình cộng
 
+
+# Truyền nhiều giá trị vào trong hàm, kiểu tuple
+def tinhtong_dayso (*numbers):
+    tong = sum(numbers)
+    return tong
+numbers = (1,1,1,1,1)
+print(tinhtong_dayso(*numbers))
+
+
+#Truyền vào kiểu từ điển:
+def tudien (**tudiennhap):
+    return tudiennhap
+tudiennhap = {
+    "ten" : "vu",
+    "tuoi" : "27"
+}
+print(tudien(**tudiennhap))
 
