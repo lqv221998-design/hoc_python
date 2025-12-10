@@ -89,4 +89,25 @@ deadline = now.replace(year=now.year + 1)
 print(f"Deadline năm sau: {deadline}")
 
 
+# 4. Timestamp (Dấu thời gian Unix)
+# Dùng khi làm việc với Database hoặc API. Đây là tổng số giây tính từ ngày 1/1/1970.
+print("\n--- 4. TIMESTAMP (MÁY TÍNH DÙNG) ---")
+# Lấy timestamp hiện tại
+dau_thoi_gian = now.timestamp()
+print(f"Timestamp hiện tại: {dau_thoi_gian}")
 
+# Đổi ngược từ timestamp về ngày tháng
+ngay_ve = dt.fromtimestamp(dau_thoi_gian)
+print(f"Đổi lại thành ngày: {ngay_ve}")
+
+"""
+Mã      | Ý nghĩa           |   Ví dụ
+%d      |Ngày (2 chữ số)    |  "05, 31"
+%m      |Tháng (2 chữ số)   |  "01, 12"
+%Y      |Năm (đầy đủ)       |   2024
+%y      |Năm (viết tắt)     |   24
+%H      |Giờ (24h)          |   "14, 23"
+%M      |Phút               |   "05, 59"
+%S      |Giây               |   30
+%A      |Thứ (Tiếng Anh)    |   Monday
+"""
