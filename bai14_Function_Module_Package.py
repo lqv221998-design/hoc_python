@@ -36,3 +36,32 @@ def TinhCanBac2 (a = 5):  #Khởi tạo hàm với giá trị cho trước
 
 ketqua = TinhCanBac2(4) 
 print(ketqua)
+
+
+# Ví dụ cho continue và exit trong hàm và vòng lặp:
+import sys # Cần thư viện này để dùng sys.exit() chuẩn nhất
+
+def kiem_tra_so(danh_sach):
+    print("--- Bắt đầu kiểm tra ---")
+    
+    for so in danh_sach:
+        # TRƯỜNG HỢP 1: Gặp số 0 thì bỏ qua (dùng continue)
+        if so == 0:
+            print("Gặp số 0 -> Bỏ qua, không xử lý!")
+            continue   # khi vòng lặp lặp đến giá trị bằng 0 trong chuỗi sẽ bỏ qua nó và tiếp tục chạy chương trình 
+        
+        # TRƯỜNG HỢP 2: Gặp số âm thì DỪNG CHƯƠNG TRÌNH (dùng exit)
+        if so < 0:
+            print(f"Lỗi nguy hiểm: Gặp số âm {so} -> Tắt chương trình ngay!")
+            exit() # khi chạy đến số nhỏ hơn 0 đúng với điều kiện thì chương trình tắt hoàn toàn
+            
+        # Nếu không dính 2 lệnh trên thì dòng này mới được chạy
+        print(f"Đã xử lý xong số: {so}")
+
+    print("--- Kết thúc hàm ---") # Dòng này sẽ KHÔNG chạy nếu gặp exit()
+
+# Chạy thử
+my_list = [10, 20, 0, 30, -5, 40]
+kiem_tra_so(my_list)
+
+
