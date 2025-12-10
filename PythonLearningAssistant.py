@@ -7,6 +7,20 @@ import random
 from typing import List, Dict, Any
 from datetime import datetime
 
+# Thêm màu sắc cho giao diện console để sinh động hơn
+class Colors:
+    HEADER = '\033[95m'
+    BLUE = '\033[94m'
+    CYAN = '\033[96m'
+    GREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+def print_color(text, color):
+    print(f"{color}{text}{Colors.ENDC}")
 class PythonLearningAssistant:
     """Lớp trợ lý học tập Python"""
     
@@ -16,20 +30,20 @@ class PythonLearningAssistant:
         self.score = 0
         self.completed_lessons = []
         self.start_time = datetime.now()
-        print(f"🎓 Chào {user_name}! Tôi là trợ lý học tập Python của bạn.\n")
+        print_color(f"🎓 Chào {self.user_name}! Tôi là trợ lý học tập Python của bạn.\n", Colors.BOLD)
     
     def show_menu(self):
         """Hiển thị menu chính"""
-        menu = """
+        menu = f"""
 ╔════════════════════════════════════════════════════════════════╗
-║         TRỢ LÝ HỌC TẬP PYTHON - MENU CHÍNH                    ║
+║         {Colors.HEADER}{Colors.BOLD}TRỢ LÝ HỌC TẬP PYTHON - MENU CHÍNH{Colors.ENDC}                    ║
 ╠════════════════════════════════════════════════════════════════╣
-║ 1. 📚 Bài học cơ bản                                           ║
-║ 2. 💻 Luyện tập viết code                                     ║
-║ 3. 🧩 Giải quyết vấn đề (Problem Solving)                    ║
-║ 4. 📝 Hướng dẫn chi tiết                                       ║
-║ 5. 🏆 Xem tiến độ học tập                                      ║
-║ 6. ❌ Thoát chương trình                                       ║
+║ {Colors.CYAN}1. 📚 Bài học cơ bản{Colors.ENDC}                                           ║
+║ {Colors.CYAN}2. 💻 Luyện tập viết code{Colors.ENDC}                                     ║
+║ {Colors.CYAN}3. 🧩 Giải quyết vấn đề (Problem Solving){Colors.ENDC}                    ║
+║ {Colors.CYAN}4. 📝 Hướng dẫn chi tiết{Colors.ENDC}                                       ║
+║ {Colors.GREEN}5. 🏆 Xem tiến độ học tập{Colors.ENDC}                                      ║
+║ {Colors.FAIL}6. ❌ Thoát chương trình{Colors.ENDC}                                       ║
 ╚════════════════════════════════════════════════════════════════╝
         """
         print(menu)
@@ -152,13 +166,13 @@ class PythonLearningAssistant:
             }
         }
         
-        print("\n📚 CÁC BÀI HỌC CỎ BẢN:")
+        print_color("\n📚 CÁC BÀI HỌC CƠ BẢN:", Colors.HEADER)
         for key, lesson in lessons.items():
             print(f"{key}. {lesson['title']}")
         
         choice = input("\nChọn bài học (1-3) hoặc 0 để quay lại: ").strip()
         if choice in lessons:
-            print(lessons[choice]['content'])
+            print_color(lessons[choice]['content'], Colors.GREEN)
             self.completed_lessons.append(lessons[choice]['title'])
             self.score += 10
             input("\nNhấn Enter để tiếp tục...")
@@ -202,7 +216,7 @@ print(factorial(5))  # 120
             }
         ]
         
-        print("\n💻 LUYỆN TẬP VIẾT CODE:")
+        print_color("\n💻 LUYỆN TẬP VIẾT CODE:", Colors.HEADER)
         for idx, ex in enumerate(exercises, 1):
             print(f"{idx}. {ex['title']}")
         
@@ -212,7 +226,7 @@ print(factorial(5))  # 120
             print(f"\n📝 {exercises[idx]['title']}")
             print(f"Yêu cầu: {exercises[idx]['problem']}")
             print("\n✅ Giải pháp tham khảo:")
-            print(exercises[idx]['solution'])
+            print_color(exercises[idx]['solution'], Colors.GREEN)
             self.score += 20
             input("\nNhấn Enter để tiếp tục...")
             return True
@@ -220,8 +234,8 @@ print(factorial(5))  # 120
     
     def problem_solving(self):
         """Phần giải quyết vấn đề"""
-        print("\n🧩 GIẢI QUYẾT VẤN ĐỀ - HƯỚNG DẪN:")
-        print("""
+        print_color("\n🧩 GIẢI QUYẾT VẤN ĐỀ - HƯỚNG DẪN:", Colors.HEADER)
+        print_color("""
 1️⃣ ĐỌC VÀ HIỂU VẤN ĐỀ:
    - Đọc kỹ yêu cầu
    - Xác định Input và Output
@@ -252,7 +266,7 @@ max_num = numbers[0]
 for num in numbers:
     if num > max_num:
         max_num = num
-print(max_num)
+print(max_num) 
         """)
         input("\nNhấn Enter để quay lại...")
         return True
@@ -298,16 +312,16 @@ even_squares = [i ** 2 for i in range(10) if i % 2 == 0]
             """)
         }
         
-        print("\n📝 HƯỚNG DẪN CHI TIẾT:")
+        print_color("\n📝 HƯỚNG DẪN CHI TIẾT:", Colors.HEADER)
         for key, (title, _) in guides.items():
             print(f"{key}. {title}")
         
         choice = input("\nChọn hướng dẫn (1-3) hoặc 0 để quay lại: ").strip()
         if choice in guides:
             print(f"\n{'='*50}")
-            print(guides[choice][0].upper())
+            print_color(guides[choice][0].upper(), Colors.BOLD)
             print(f"{'='*50}\n")
-            print(guides[choice][1])
+            print_color(guides[choice][1], Colors.GREEN)
             self.score += 5
             input("\nNhấn Enter để tiếp tục...")
             return True
@@ -316,23 +330,24 @@ even_squares = [i ** 2 for i in range(10) if i % 2 == 0]
     def show_progress(self):
         """Hiển thị tiến độ học tập"""
         elapsed = (datetime.now() - self.start_time).total_seconds() / 60
-        print(f"""
+        progress_card = f"""
 ╔════════════════════════════════════════════════════════════════╗
-║               📊 TIẾN ĐỘ HỌC TẬP CỦA BẠN                     ║
+║               {Colors.GREEN}{Colors.BOLD}📊 TIẾN ĐỘ HỌC TẬP CỦA BẠN{Colors.ENDC}                     ║
 ╠════════════════════════════════════════════════════════════════╣
-║ Tên học viên: {self.user_name:<45} ║
-║ Điểm tích lũy: {self.score:<44} ║
-║ Thời gian học: {elapsed:.1f} phút{' '*(40-len(str(int(elapsed))))} ║
-║ Bài học hoàn thành: {len(self.completed_lessons):<36} ║
+║ Tên học viên: {Colors.CYAN}{self.user_name:<45}{Colors.ENDC} ║
+║ Điểm tích lũy: {Colors.CYAN}{self.score:<44}{Colors.ENDC} ║
+║ Thời gian học: {Colors.CYAN}{elapsed:.1f} phút{' '*(40-len(str(int(elapsed))))}{Colors.ENDC} ║
+║ Bài học hoàn thành: {Colors.CYAN}{len(self.completed_lessons):<36}{Colors.ENDC} ║
 ╠════════════════════════════════════════════════════════════════╣
 ║ Các bài học đã hoàn thành:                                     ║
-        """)
+"""
+        print(progress_card)
         
         if self.completed_lessons:
             for i, lesson in enumerate(self.completed_lessons, 1):
-                print(f"║ {i}. ✓ {lesson:<54} ║")
+                print(f"║ {i}. {Colors.GREEN}✓ {lesson:<52}{Colors.ENDC} ║")
         else:
-            print("║ Chưa có bài học nào hoàn thành                         ║")
+            print(f"║ {Colors.WARNING}Chưa có bài học nào hoàn thành{Colors.ENDC}                         ║")
         
         print("╚════════════════════════════════════════════════════════════════╝")
         input("\nNhấn Enter để tiếp tục...")
@@ -344,32 +359,32 @@ even_squares = [i ** 2 for i in range(10) if i % 2 == 0]
             choice = input("Chọn tùy chọn (1-6): ").strip()
             
             if choice == "1":
-                while self.basic_lessons():
-                    pass
+                if self.basic_lessons():
+                    continue
             elif choice == "2":
-                while self.practice_coding():
-                    pass
+                if self.practice_coding():
+                    continue
             elif choice == "3":
-                while self.problem_solving():
-                    pass
+                if self.problem_solving():
+                    continue
             elif choice == "4":
-                while self.show_guide():
-                    pass
+                if self.show_guide():
+                    continue
             elif choice == "5":
                 self.show_progress()
             elif choice == "6":
-                print(f"\n👋 Tạm biệt {self.user_name}! Hẹn gặp lại! 🎓")
-                print(f"   Bạn đã học được {self.score} điểm! Tiếp tục cố gắng!")
+                print_color(f"\n👋 Tạm biệt {self.user_name}! Hẹn gặp lại! 🎓", Colors.BOLD)
+                print_color(f"   Bạn đã học được {self.score} điểm! Tiếp tục cố gắng!", Colors.GREEN)
                 break
             else:
-                print("❌ Vui lòng chọn từ 1-6!")
+                print_color("❌ Lựa chọn không hợp lệ. Vui lòng chọn từ 1-6!", Colors.FAIL)
 
 
 def main():
     """Hàm chính"""
-    print("╔════════════════════════════════════════════════════════════════╗")
-    print("║   🎓 TRỢ LÝ HỌC TẬP PYTHON - PYTHON LEARNING ASSISTANT 🎓     ║")
-    print("╚════════════════════════════════════════════════════════════════╝\n")
+    print_color("╔════════════════════════════════════════════════════════════════╗", Colors.HEADER)
+    print_color("║   🎓 TRỢ LÝ HỌC TẬP PYTHON - PYTHON LEARNING ASSISTANT 🎓     ║", Colors.HEADER)
+    print_color("╚════════════════════════════════════════════════════════════════╝\n", Colors.HEADER)
     
     user_name = input("Xin chào! Tên của bạn là gì? ").strip()
     if not user_name:
