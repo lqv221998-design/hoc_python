@@ -17,3 +17,4 @@ can_nang = int(input("Hãy nhập cân nặng của bạn: "))
 print(infomation(name, age, chieu_cao, can_nang))
 
 
+
