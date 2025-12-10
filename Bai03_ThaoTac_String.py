@@ -81,4 +81,5 @@ print("Các ký tự trong chuỗi:")
 for char in sample_str:
     print(char)  #Kết quả: H e l l o ,   P y t h o n ! (mỗi ký tự trên một dòng)
 
+#Trên đây là các hàm xử lý chuổi từ gợi ý của Copilot
 
