@@ -19,15 +19,47 @@ print("Tuổi mới:", my_dict["age"])  # Kết quả: 31
 del my_dict["city"]  # Xóa khóa 'city'
 print("Dictionary sau khi xóa city:", my_dict)  # Kết quả: {'name': 'Alice', 'age': 31, 'job': 'Engineer'}
 
+
+
+
 # Lặp qua các khóa và giá trị trong dictionary
-for key, value in my_dict.items():
+for key, value in my_dict.items(): # .items() để lấy ra từng 
     print(f"{key}: {value}")  # In từng cặp khóa-giá trị
+
+
+# Ví dụ cụ thể khi sử dụng items()
+sinh_vien = {
+    "ten": "Nam",
+    "tuoi": 22,
+    "lop": "12A1"
+}
+# Cách 1: Không dùng .items() (Cách cũ)
+for k in sinh_vien:
+    # k chỉ là key ("ten", "tuoi"...)
+    # Muốn lấy value phải gọi lại dict
+    print(f"{k}: {sinh_vien[k]}")
+
+#Cách 2: Dùng .items() (Cách chuyên nghiệp)
+# k là Key, v là Value (tự động tách ra)
+for k, v in sinh_vien.items():
+    print(f"{k}: {v}")
+# ten: Nam
+# tuoi: 22
+# lop: 12A1
+
+print(sinh_vien.items())
+# Kết quả: dict_items([('ten', 'Nam'), ('tuoi', 22), ('lop', '12A1')])
+
+
+
 
 # Kiểm tra sự tồn tại của một khóa
 if "name" in my_dict:
     print("Khóa 'name' tồn tại trong dictionary")  # Kết quả: Khóa 'name' tồn tại trong dictionary
 if "city" not in my_dict:
     print("Khóa 'city' không tồn tại trong dictionary")  # Kết quả: Khóa 'city' không tồn tại trong dictionary
+
+
 
 # Lấy tất cả các khóa và giá trị
 keys = my_dict.keys()
