@@ -4,6 +4,7 @@ def function_name (par1 ,par2, ...):
     body_func
     return
 '''
+'''
 # Ví dụ hàm (function):
 def infomation (name, age, chieu_cao, can_nang):
     BMI = can_nang/chieu_cao
@@ -16,10 +17,11 @@ can_nang = int(input("Hãy nhập cân nặng của bạn: "))
 
 print(infomation(name, age, chieu_cao, can_nang))
 
+'''
 
 # Gọi các hàm từ các file khác
-import importlib
-ThaoTacVoiHam = importlib.import_module("06_ThaoTacVoiHam")
-
+from bai06_ThaoTacVoiHam import add
+TinhTongHaiSo = add(3,4)
+print(TinhTongHaiSo)
 
 
