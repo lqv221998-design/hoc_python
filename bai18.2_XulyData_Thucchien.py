@@ -3,7 +3,7 @@
 import csv
 
 
-#---XỬ LÝ 1 DICT CÁCH 1
+#---XỬ LÝ 1 DICT CÁCH 1  (Cách này đang tự ý xuống dòng)
 # Cách tự suy nghĩ
 #Nội dung muốn thêm vào kiểu dict
 content = {
@@ -33,7 +33,7 @@ with open(file_name, "a", encoding="utf-8-sig") as af:
 
 
 
-#XỬ LÝ 1 DICT CÁCH 2
+#XỬ LÝ 1 DICT CÁCH 2    (Cách này đang tự ý xuống dòng)
 import csv
 content = {
     "userId": 3,
@@ -53,7 +53,7 @@ print("Đã thêm thành công nội dung")
 
 
 
-#---XỬ LÝ LIST NHIỀU DICT
+#---XỬ LÝ LIST NHIỀU DICT CÁCH 1    (Cách này đang tự ý xuống dòng)
 content = [
     {
     "userId": 0,
@@ -79,4 +79,31 @@ with open(file_name, "a", encoding="utf-8-sig") as af:
             key["body"]
         ]
         wr.writerow(value)
+    print("Đã thêm mới nội dung")
+
+#---XỬ LÝ LIST NHIỀU DICT CÁCH 1    (fix lỗi tự ý xuống dòng)
+content = [
+    {
+    "userId": 0,
+    "id": 0,
+    "title": "dòng thêm mới 1",
+    "body": "vũ đã thêm mới một dòng 1"
+    },
+    {
+    "userId": 3,
+    "id": 3,
+    "title": "dòng thêm mới 2",
+    "body": "vũ đã thêm mới một dòng 2"
+    }
+] 
+file_name = "Danh sach bai viet jsonplaceholder.csv"
+handle = ["userId", "id", "title", "body"]
+with open(file_name, "a", newline="", encoding="utf-8-sig") as af:
+    wr = csv.DictWriter(af, fieldnames=handle)
+    list_empty = []
+    for lis in content:
+        list_copy = lis.copy()
+        list_copy["body"].replace("\n", "").replace("\r", "")
+        list_empty.append(list_copy)
+        wr.writerows(list_empty)
     print("Đã thêm mới nội dung")
