@@ -1,3 +1,0 @@
-Dòng 1: Nguyễn Văn A - 0901234567
-Dòng 2: Nguyễn Văn A - 0901234568
-Dòng 3: Lê Văn C - 0908888888
