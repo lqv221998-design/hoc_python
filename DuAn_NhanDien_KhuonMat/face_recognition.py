@@ -21,6 +21,7 @@ gray_image = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 #dlib: là modun trí tuệ nhân tạo giúp nhận diện khuôn mặt 
 nhan_dien = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predeictor("shape_predictor_68_face_landmarks.dat")
 
 faces = nhan_dien(gray_image)
 print(len(faces))
@@ -31,6 +32,13 @@ for face in faces:
     y2 = face.bottom()
     cv2.rectangle(img=gray_image, pt1=(x1,y1), pt2=(x2,y2), color=(255,0, 0), thickness=3)
     
+
+    feature = predictor(image=gray_image, box=face)
+    for n in range(0,68):
+        x = face.part(n).x
+        y = face.part(n).y
+        cv2.circle(img = img, center=(x,y), radius= 2, color= (0,0,255), thickness=0.5)
+
 #show image
 #winname: đặt tên cho app
 # ---cv2.imshow(winname="face recognition App", mat=img)--- Code cũ lấy đúng màu ảnh
