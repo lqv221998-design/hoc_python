@@ -19,6 +19,6 @@ if found:
     with open(file_name, mode='w', newline='', encoding='utf-8-sig') as wf:
         write = csv.writer(wf)
         write.writerows(rows)
-    print("Đã cập nhật")
+    print("Đã cập nhật file")
 else:
-    print("Không tìm thấy bài viết có ID = 1")
+    print("Không tìm có ID = 1")
