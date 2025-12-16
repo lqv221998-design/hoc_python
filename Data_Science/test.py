@@ -15,10 +15,3 @@ for i in range(1, len(rows)):
         print(f"đã tìm thấy id cũ: {rows[i][1]}")
         found = True
         break
-if found:
-    with open(file_name, mode='w', newline='', encoding='utf-8-sig') as wf:
-        write = csv.writer(wf)
-        write.writerows(rows)
-    print("Đã cập nhật file thành công!")
-else:
-    print("Không tìm thấy bài viết có ID = 1")
